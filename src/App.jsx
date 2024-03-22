@@ -1,17 +1,21 @@
-import SettingsIcon from '@mui/icons-material/Settings';
-import { Button } from '@mui/material';
+import Sidebar from './components/Sidebar.jsx'
+import Feed from './components/Feed.jsx'
+import Rightbar from './components/Rightbar.jsx'
+import { Box, Stack } from '@mui/material'
+import Navbar from './components/Navbar.jsx'
 
-
-function App() {
-
+const App = () => {
   return (
-    <>
-      <Button startIcon={<SettingsIcon/>} variant="text">Text</Button>
-      <Button disabled variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-    </>
+    <Box>
+      <Navbar />
+      
+      <Stack direction={"row"} spacing={2} justifyContent={"space-between"}>
+        <Sidebar />
+        <Feed/>
+        <Rightbar/>
+      </Stack>
+    </Box>
   )
-
 }
 
 export default App
